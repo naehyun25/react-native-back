@@ -13,6 +13,6 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: true,
       },
     });
-    return review;
+    return banner;
   };
     
