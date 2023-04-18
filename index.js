@@ -213,6 +213,20 @@ app.post("/purchase/:id", (req, res) => {
     });
 });
 
+app.get("/banner", (req, res) => {
+  models.banner.findAll({
+    order: [["createdAt", "DESC"]], //order 설정변경가능
+    attributes: ["id", "name", "imgUrl", "desc"],
+  })
+    .then((result) => {
+      res.send({ banner: result });
+    })
+    .catch((err) => {
+      console.error(err);
+      res.send("에러발생");
+    });
+});
+
 app.listen(port, () => {
   console.log("🚩4niture의 쇼핑몰 서버가 돌아가고 있습니다");
   models.sequelize
