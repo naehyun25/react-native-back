@@ -213,12 +213,12 @@ app.post("/purchase/:id", (req, res) => {
 });
 
 app.get("/banner", (req, res) => {
-  models.banner.findAll({
-    order: [["createdAt", "DESC"]], //order 설정변경가능
+  models.Banner.findAll({
     attributes: ["id", "name", "imgUrl", "desc"],
   })
     .then((result) => {
       res.send({ banner: result });
+      console.log(result)
     })
     .catch((err) => {
       console.error(err);

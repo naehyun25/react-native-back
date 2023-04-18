@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const banner = sequelize.define("banner", {
+    const banner = sequelize.define("Banner", {
       name: {
         type: DataTypes.STRING(100),
         allowNull: false,
